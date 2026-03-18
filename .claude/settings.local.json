@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(where.exe node:*)",
+      "Bash(where.exe npm:*)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:/c/Users/g/AppData/Roaming/npm:$PATH\")",
+      "Bash(npm --version)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/g/**)",
+      "Bash(cmd.exe /c 'where node')",
+      "Bash(cmd.exe /c 'where npm')",
+      "Bash(cmd.exe /c \"node --version\")",
+      "Bash(powershell.exe -NoProfile -Command \"node --version; npm --version\")",
+      "Bash(powershell.exe -NoProfile -Command \"winget search Node.js --source winget\")",
+      "Bash(powershell.exe -NoProfile -Command \"winget install OpenJS.NodeJS.22 --accept-package-agreements --accept-source-agreements\")",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(powershell.exe -NoProfile -Command \"python --version\")",
+      "Bash(\"/c/Users/g/AppData/Local/Programs/Python/Python311/python.exe\" -m pip install fastapi uvicorn stripe)",
+      "Bash(\"/c/Users/g/AppData/Local/Programs/Python/Python311/python.exe\" -m uvicorn server:app --host 0.0.0.0 --port 8000)",
+      "Bash(curl -s http://localhost:8000/docs)",
+      "Bash(curl -s -X POST http://localhost:8000/create-payment-intent -H \"Content-Type: application/json\" -d '{\"\"amount\"\": 148800, \"\"currency\"\": \"\"usd\"\"}')",
+      "Bash(\"/c/Users/g/AppData/Local/Programs/Python/Python311/python.exe\" -m pip install python-dotenv)",
+      "Bash(curl -s http://localhost:8000/products)",
+      "Bash(\"/c/Users/g/AppData/Local/Programs/Python/Python311/python.exe\" -m pip install mercadopago)",
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(curl -s -X POST http://localhost:8000/admin/login -H \"Content-Type: application/json\" -d '{\"\"password\"\":\"\"VgPr0$h0p-X7k9\"\"}')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(gh auth:*)",
+      "Bash(git --version)",
+      "Bash(winget install:*)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth login --web --git-protocol https)"
+    ]
+  }
+}

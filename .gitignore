@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.env
+backend/.env
+backend/vantage.db
+backend/__pycache__/
