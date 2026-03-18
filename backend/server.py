@@ -132,8 +132,14 @@ def create_preference(req: PreferenceRequest):
         }
 
         result = sdk.preference().create(preference_data)
-        pref = result["response"]
+        print("MP Result:", json.dumps(result, default=str))
 
+        if result.get("status") not in (200, 201):
+            db.restore_stock(req.items)
+            error_msg = result.get("response", {}).get("message", str(result))
+            raise HTTPException(status_code=400, detail=f"Mercado Pago error: {error_msg}")
+
+        pref = result["response"]
         db.create_order(order_id, req.items, grand_total, req.customer_email)
 
         return {
@@ -143,7 +149,10 @@ def create_preference(req: PreferenceRequest):
             "order_id": order_id,
             "total": grand_total,
         }
+    except HTTPException:
+        raise
     except Exception as e:
+        print("MP Exception:", str(e))
         db.restore_stock(req.items)
         raise HTTPException(status_code=400, detail=str(e))
 
