@@ -88,7 +88,7 @@ const CheckoutForm = ({ cart, subtotal, onBack, onPurchaseComplete }) => {
 
       const data = await res.json();
       // Redirect to MercadoPago checkout
-      window.location.href = data.sandbox_init_point || data.init_point;
+      window.location.href = data.init_point;
     } catch (err) {
       setPaymentError('Error inesperado. Intenta de nuevo.');
       setIsProcessing(false);
